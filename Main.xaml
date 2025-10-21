@@ -255,7 +255,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="898,3857.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="898,654.7066666666666" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataRow[]" Name="matchingProducts" />
       <Variable x:TypeArguments="sd:DataRow" Name="productRow" />
@@ -266,244 +266,245 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="618,3834.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LireExcelCommandes - Invoke Workflow File (LireExcelCommandes.xaml)" sap:VirtualizedContainerService.HintSize="416,57.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LireExcelCommandes.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LireExcelCommandes - Invoke Workflow File (LireExcelCommandes.xaml)" sap:VirtualizedContainerService.HintSize="584,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LireExcelCommandes.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <scg:Dictionary x:TypeArguments="x:String, Argument" />
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OrdersDataTable]" DisplayName="Pour chaque ligne dans le DataTable &quot;Commandes&quot; (limité aux 6 premières commandes) :" sap:VirtualizedContainerService.HintSize="584,3407.3333333333335" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="6">
-        <ui:ForEachRow.Body>
-          <ActivityAction x:TypeArguments="sd:DataRow">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="582,3223.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    </ui:InvokeWorkflowFile>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OrdersDataTable]" DisplayName="Pour chaque ligne dans le DataTable &quot;Commandes&quot; (limité aux 6 premières commandes) :" sap:VirtualizedContainerService.HintSize="416,57.333333333333336" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="6">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="578,3342.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Utiliser Try Catch pour la gestion des erreurs pendant le traitement." sap:VirtualizedContainerService.HintSize="544,3282.6666666666665" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Utiliser Try Catch pour la gestion des erreurs pendant le traitement." sap:VirtualizedContainerService.HintSize="548,3163.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <TryCatch.Try>
-                  <Sequence DisplayName="Essayer" sap:VirtualizedContainerService.HintSize="542,2823.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Vérifier la disponibilité du produit dans le DataTable &quot;Produits&quot;." sap:VirtualizedContainerService.HintSize="508,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="sd:DataRow[]">[matchingProducts]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="sd:DataRow[]">[GlobalVariablesNamespace.GlobalVariables.ProductsDataTable.Select("Nom_Produit = '" &amp; CurrentRow("Modèle_Commandé").ToString() &amp; "'")]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <If Condition="[matchingProducts.Length &gt; 0]" DisplayName="Si un produit correspondant est trouvé :" sap:VirtualizedContainerService.HintSize="508,2301.3333333333335" sap2010:WorkflowViewState.IdRef="If_1">
-                      <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,2070.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Attribuer la ligne de produit trouvée à une variable." sap:VirtualizedContainerService.HintSize="472,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="sd:DataRow">[productRow]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="sd:DataRow">[matchingProducts(0)]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign DisplayName="Obtenir le stock disponible sous forme d'entier." sap:VirtualizedContainerService.HintSize="472,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">[productRow__Stock__]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(productRow("Stock_Disponible"))]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <If Condition="[productRow__Stock__ &gt;= Convert.ToInt32(CurrentRow(&quot;Quantité&quot;))]" DisplayName="Si le stock est disponible :" sap:VirtualizedContainerService.HintSize="472,1776" sap2010:WorkflowViewState.IdRef="If_2">
-                            <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="470,682.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Mettre à jour la colonne 'Stock_Disponible' du produit" sap:VirtualizedContainerService.HintSize="436,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Object">[productRow("Stock_Disponible")]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Object">[productRow__Stock__ - Convert.ToInt32(CurrentRow("Quantité"))]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <Assign DisplayName="Mettre à jour le &quot;Statut_Commande&quot; à &quot;Validé&quot; dans le DataTable &quot;Commandes&quot;." sap:VirtualizedContainerService.HintSize="436,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Object">[CurrentRow("Statut_Commande")]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Object">["Validé"]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" ConnectionId="6c8d91d4-d139-4c71-8488-183a2dc8c4b4" DisplayName="Envoyer un e-mail de confirmation au client." sap:VirtualizedContainerService.HintSize="436,388" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="TEXT" SaveAsDraft="False" Subject="[&quot;Confirmation de commande : &quot; &amp; CurrentRow(&quot;ID_Commande&quot;).ToString()]" TextBody="[String.Format(&quot;Bonjour {0}, votre commande pour le modèle {1} a été validée et sera expédiée prochainement. Merci pour votre achat !&quot;, CurrentRow(&quot;Nom_Client&quot;), CurrentRow(&quot;Modèle_Commandé&quot;))]" To="[Enumerable.Repeat(CurrentRow(&quot;Email_Client&quot;).ToString(), 1)]" UseConnectionService="True">
-                                  <uga:SendEmailConnections.Attachments>
-                                    <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
-                                  </uga:SendEmailConnections.Attachments>
-                                  <uga:SendEmailConnections.AttachmentsBackup>
-                                    <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
-                                      <usau:BackupSlot.BackupValues>
-                                        <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
-                                      </usau:BackupSlot.BackupValues>
-                                    </usau:BackupSlot>
-                                  </uga:SendEmailConnections.AttachmentsBackup>
-                                  <uga:SendEmailConnections.Body>
-                                    <InArgument x:TypeArguments="x:String" />
-                                  </uga:SendEmailConnections.Body>
-                                  <uga:SendEmailConnections.InputTypeBackup>
-                                    <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="TEXT">
-                                      <usau:BackupSlot.BackupValues>
-                                        <scg:List x:TypeArguments="x:Object" x:Key="HTML" Capacity="1">
-                                          <InArgument x:TypeArguments="x:String" />
-                                        </scg:List>
-                                      </usau:BackupSlot.BackupValues>
-                                    </usau:BackupSlot>
-                                  </uga:SendEmailConnections.InputTypeBackup>
-                                </uga:SendEmailConnections>
-                              </Sequence>
-                            </If.Then>
-                            <If.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="470,962.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Assign DisplayName="Mettre à jour le &quot;Statut_Commande&quot; à &quot;En attente de réapprovisionnement&quot; dans le DataTable &quot;Commandes&quot;." sap:VirtualizedContainerService.HintSize="436,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Object">[CurrentRow("Statut_Commande")]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Object">["En attente de réapprovisionnement"]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                                <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Bonjour &lt;/SPAN&gt;&lt;SPAN&gt;{0}&lt;/SPAN&gt;&lt;SPAN&gt;, nous avons le regret de vous informer que le produit &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;SPAN&gt; est actuellement en rupture de stock. Votre commande est en attente et sera trait&amp;#233;e d&amp;#232;s que le r&amp;#233;approvisionnement sera effectu&amp;#233;. Nous vous prions de nous excuser pour la g&amp;#234;ne occasionn&amp;#233;e.&lt;/SPAN&gt;&lt;/P&gt;&quot;, CurrentRow(&quot;Nom_Client&quot;), CurrentRow(&quot;Modèle_Commandé&quot;))]" ConnectionId="6c8d91d4-d139-4c71-8488-183a2dc8c4b4" DisplayName="Envoyer un e-mail au client concernant le stock indisponible." sap:VirtualizedContainerService.HintSize="436,397.3333333333333" sap2010:WorkflowViewState.IdRef="SendEmailConnections_2" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Mise à jour de commande : &quot; &amp; CurrentRow(&quot;ID_Commande&quot;).ToString() &amp; &quot; - En attente de réapprovisionnement&quot;]" To="[Enumerable.Repeat(CurrentRow(&quot;Email_Client&quot;).ToString(), 1)]" UseConnectionService="True">
-                                  <uga:SendEmailConnections.Attachments>
-                                    <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
-                                  </uga:SendEmailConnections.Attachments>
-                                  <uga:SendEmailConnections.AttachmentsBackup>
-                                    <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
-                                      <usau:BackupSlot.BackupValues>
-                                        <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
-                                      </usau:BackupSlot.BackupValues>
-                                    </usau:BackupSlot>
-                                  </uga:SendEmailConnections.AttachmentsBackup>
-                                  <uga:SendEmailConnections.InputTypeBackup>
-                                    <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
-                                      <usau:BackupSlot.BackupValues>
-                                        <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
-                                      </usau:BackupSlot.BackupValues>
-                                    </usau:BackupSlot>
-                                  </uga:SendEmailConnections.InputTypeBackup>
-                                </uga:SendEmailConnections>
-                                <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Alerte stock : Le produit &lt;/SPAN&gt;&lt;SPAN&gt;{0}&lt;/SPAN&gt;&lt;SPAN&gt; (R&amp;#233;f&amp;#233;rence : &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;SPAN&gt;) est en rupture de stock. Veuillez lancer les proc&amp;#233;dures de r&amp;#233;approvisionnement.&lt;/SPAN&gt;&lt;/P&gt;&quot;, productRow(&quot;Nom_Produit&quot;), productRow(&quot;Référence_Produit&quot;))]" ConnectionId="6c8d91d4-d139-4c71-8488-183a2dc8c4b4" DisplayName="Envoyer un e-mail de notification au service logistique." sap:VirtualizedContainerService.HintSize="436,388" sap2010:WorkflowViewState.IdRef="SendEmailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Alerte stock : &quot; &amp; productRow(&quot;Nom_Produit&quot;).ToString()]" To="[New List(Of String) From {&quot;logistics@example.com&quot;}]" UseConnectionService="True">
-                                  <uga:SendEmailConnections.Attachments>
-                                    <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
-                                  </uga:SendEmailConnections.Attachments>
-                                  <uga:SendEmailConnections.AttachmentsBackup>
-                                    <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
-                                      <usau:BackupSlot.BackupValues>
-                                        <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
-                                      </usau:BackupSlot.BackupValues>
-                                    </usau:BackupSlot>
-                                  </uga:SendEmailConnections.AttachmentsBackup>
-                                  <uga:SendEmailConnections.InputTypeBackup>
-                                    <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
-                                      <usau:BackupSlot.BackupValues>
-                                        <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
-                                      </usau:BackupSlot.BackupValues>
-                                    </usau:BackupSlot>
-                                  </uga:SendEmailConnections.InputTypeBackup>
-                                </uga:SendEmailConnections>
-                              </Sequence>
-                            </If.Else>
-                          </If>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="506,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <ui:LogMessage DisplayName="Enregistrer les détails de l'opération." sap:VirtualizedContainerService.HintSize="508,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Format(&quot;Processed Order ID: {0}, Status: {1}&quot;, CurrentRow(&quot;ID_Commande&quot;), CurrentRow(&quot;Statut_Commande&quot;))]" />
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ModifierExcel - Invoke Workflow File (ModifierExcel.xaml)" sap:VirtualizedContainerService.HintSize="508,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="ModifierExcel.xaml">
-                      <ui:InvokeWorkflowFile.Arguments>
-                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
-                      </ui:InvokeWorkflowFile.Arguments>
-                    </ui:InvokeWorkflowFile>
-                  </Sequence>
-                </TryCatch.Try>
-                <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                    <ActivityAction x:TypeArguments="s:Exception">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="542,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <TryCatch.Try>
+                <Sequence DisplayName="Essayer" sap:VirtualizedContainerService.HintSize="542,2806" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Vérifier la disponibilité du produit dans le DataTable &quot;Produits&quot;." sap:VirtualizedContainerService.HintSize="508,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="sd:DataRow[]">[matchingProducts]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="sd:DataRow[]">[GlobalVariablesNamespace.GlobalVariables.ProductsDataTable.Select("Nom_Produit = '" &amp; CurrentRow("Modèle_Commandé").ToString() &amp; "'")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[matchingProducts.Length &gt; 0]" DisplayName="Si un produit correspondant est trouvé :" sap:VirtualizedContainerService.HintSize="508,2284.6666666666665" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,2054.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Attribuer la ligne de produit trouvée à une variable." sap:VirtualizedContainerService.HintSize="472,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="sd:DataRow">[productRow]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="sd:DataRow">[matchingProducts(0)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Obtenir le stock disponible sous forme d'entier." sap:VirtualizedContainerService.HintSize="472,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[productRow__Stock__]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(productRow("Stock_Disponible"))]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <If Condition="[productRow__Stock__ &gt;= Convert.ToInt32(CurrentRow(&quot;Quantité&quot;))]" DisplayName="Si le stock est disponible :" sap:VirtualizedContainerService.HintSize="472,1761.3333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="470,677.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Mettre à jour la colonne 'Stock_Disponible' du produit" sap:VirtualizedContainerService.HintSize="436,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[productRow("Stock_Disponible")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">[productRow__Stock__ - Convert.ToInt32(CurrentRow("Quantité"))]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign DisplayName="Mettre à jour le &quot;Statut_Commande&quot; à &quot;Validé&quot; dans le DataTable &quot;Commandes&quot;." sap:VirtualizedContainerService.HintSize="436,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[CurrentRow("Statut_Commande")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">["Validé"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" ConnectionId="6c8d91d4-d139-4c71-8488-183a2dc8c4b4" DisplayName="Envoyer un e-mail de confirmation au client." sap:VirtualizedContainerService.HintSize="436,384" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="TEXT" SaveAsDraft="False" Subject="[&quot;Confirmation de commande : &quot; &amp; CurrentRow(&quot;ID_Commande&quot;).ToString()]" TextBody="[String.Format(&quot;Bonjour {0}, votre commande pour le modèle {1} a été validée et sera expédiée prochainement. Merci pour votre achat !&quot;, CurrentRow(&quot;Nom_Client&quot;), CurrentRow(&quot;Modèle_Commandé&quot;))]" To="[Enumerable.Repeat(CurrentRow(&quot;Email_Client&quot;).ToString(), 1)]" UseConnectionService="True">
+                                <uga:SendEmailConnections.Attachments>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                                </uga:SendEmailConnections.Attachments>
+                                <uga:SendEmailConnections.AttachmentsBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.AttachmentsBackup>
+                                <uga:SendEmailConnections.Body>
+                                  <InArgument x:TypeArguments="x:String" />
+                                </uga:SendEmailConnections.Body>
+                                <uga:SendEmailConnections.InputTypeBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="TEXT">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:List x:TypeArguments="x:Object" x:Key="HTML" Capacity="1">
+                                        <InArgument x:TypeArguments="x:String" />
+                                      </scg:List>
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.InputTypeBackup>
+                              </uga:SendEmailConnections>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="470,954" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign DisplayName="Mettre à jour le &quot;Statut_Commande&quot; à &quot;En attente de réapprovisionnement&quot; dans le DataTable &quot;Commandes&quot;." sap:VirtualizedContainerService.HintSize="436,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Object">[CurrentRow("Statut_Commande")]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Object">["En attente de réapprovisionnement"]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Bonjour &lt;/SPAN&gt;&lt;SPAN&gt;{0}&lt;/SPAN&gt;&lt;SPAN&gt;, nous avons le regret de vous informer que le produit &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;SPAN&gt; est actuellement en rupture de stock. Votre commande est en attente et sera trait&amp;#233;e d&amp;#232;s que le r&amp;#233;approvisionnement sera effectu&amp;#233;. Nous vous prions de nous excuser pour la g&amp;#234;ne occasionn&amp;#233;e.&lt;/SPAN&gt;&lt;/P&gt;&quot;, CurrentRow(&quot;Nom_Client&quot;), CurrentRow(&quot;Modèle_Commandé&quot;))]" ConnectionId="6c8d91d4-d139-4c71-8488-183a2dc8c4b4" DisplayName="Envoyer un e-mail au client concernant le stock indisponible." sap:VirtualizedContainerService.HintSize="436,393.3333333333333" sap2010:WorkflowViewState.IdRef="SendEmailConnections_2" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Mise à jour de commande : &quot; &amp; CurrentRow(&quot;ID_Commande&quot;).ToString() &amp; &quot; - En attente de réapprovisionnement&quot;]" To="[Enumerable.Repeat(CurrentRow(&quot;Email_Client&quot;).ToString(), 1)]" UseConnectionService="True">
+                                <uga:SendEmailConnections.Attachments>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                                </uga:SendEmailConnections.Attachments>
+                                <uga:SendEmailConnections.AttachmentsBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.AttachmentsBackup>
+                                <uga:SendEmailConnections.InputTypeBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.InputTypeBackup>
+                              </uga:SendEmailConnections>
+                              <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" TextBody="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;Alerte stock : Le produit &lt;/SPAN&gt;&lt;SPAN&gt;{0}&lt;/SPAN&gt;&lt;SPAN&gt; (R&amp;#233;f&amp;#233;rence : &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;SPAN&gt;) est en rupture de stock. Veuillez lancer les proc&amp;#233;dures de r&amp;#233;approvisionnement.&lt;/SPAN&gt;&lt;/P&gt;&quot;, productRow(&quot;Nom_Produit&quot;), productRow(&quot;Référence_Produit&quot;))]" ConnectionId="6c8d91d4-d139-4c71-8488-183a2dc8c4b4" DisplayName="Envoyer un e-mail de notification au service logistique." sap:VirtualizedContainerService.HintSize="436,384" sap2010:WorkflowViewState.IdRef="SendEmailConnections_3" Importance="Normal" InputType="HTML" SaveAsDraft="False" Subject="[&quot;Alerte stock : &quot; &amp; productRow(&quot;Nom_Produit&quot;).ToString()]" To="[New List(Of String) From {&quot;logistics@example.com&quot;}]" UseConnectionService="True">
+                                <uga:SendEmailConnections.Attachments>
+                                  <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+                                </uga:SendEmailConnections.Attachments>
+                                <uga:SendEmailConnections.AttachmentsBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:AttachmentInputMode" StoredValue="UseExisting">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugage:AttachmentInputMode, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.AttachmentsBackup>
+                                <uga:SendEmailConnections.InputTypeBackup>
+                                  <usau:BackupSlot x:TypeArguments="ugage:BodyInputType" StoredValue="HTML">
+                                    <usau:BackupSlot.BackupValues>
+                                      <scg:Dictionary x:TypeArguments="ugage:BodyInputType, scg:List(x:Object)" />
+                                    </usau:BackupSlot.BackupValues>
+                                  </usau:BackupSlot>
+                                </uga:SendEmailConnections.InputTypeBackup>
+                              </uga:SendEmailConnections>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="506,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Sequence>
-                    </ActivityAction>
-                  </Catch>
-                </TryCatch.Catches>
-                <TryCatch.Finally>
-                  <Sequence DisplayName="Enfin" sap:VirtualizedContainerService.HintSize="542,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
-                </TryCatch.Finally>
-              </TryCatch>
-            </Sequence>
-          </ActivityAction>
-        </ui:ForEachRow.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:ForEachRow>
-      <ui:LogMessage DisplayName="Enregistrer la fin du processus." sap:VirtualizedContainerService.HintSize="584,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Order processing completed successfully.&quot;]">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:LogMessage>
-    </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:LogMessage DisplayName="Enregistrer les détails de l'opération." sap:VirtualizedContainerService.HintSize="508,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[String.Format(&quot;Processed Order ID: {0}, Status: {1}&quot;, CurrentRow(&quot;ID_Commande&quot;), CurrentRow(&quot;Statut_Commande&quot;))]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ModifierExcel - Invoke Workflow File (ModifierExcel.xaml)" sap:VirtualizedContainerService.HintSize="508,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="ModifierExcel.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="542,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log erreur - Commande" sap:VirtualizedContainerService.HintSize="508,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Erreur lors du traitement de la commande ID : &quot; &amp; CurrentRow(&quot;ID_Commande&quot;).ToString() &amp; &quot; - Détails : &quot; &amp; exception.Message]" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Enfin" sap:VirtualizedContainerService.HintSize="542,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </TryCatch.Finally>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:LogMessage DisplayName="Enregistrer la fin du processus." sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Order processing completed successfully.&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
   </Sequence>
 </Activity>
