@@ -110,7 +110,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="LireExcelCommandes" sap:VirtualizedContainerService.HintSize="1276,4284.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LireExcelCommandes" sap:VirtualizedContainerService.HintSize="964.6666666666666,4284.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -136,7 +136,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Lire les données du fichier maquettes" sap:VirtualizedContainerService.HintSize="549.3333333333334,2534" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadOnly="True" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[Path.Combine(Environment.CurrentDirectory, &quot;Data&quot;, &quot;Commandes_Maquettes_Militaires.xlsx&quot;)]">
+                  <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" SensitivityLabel="{x:Null}" CreateNewFile="False" DisplayName="Lire les données du fichier maquettes" sap:VirtualizedContainerService.HintSize="549.3333333333334,2534" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadOnly="True" ResizeWindow="None" SensitivityOperation="None" WorkbookPath="[Path.Combine(Environment.CurrentDirectory, &quot;Data&quot;, &quot;Commandes_Maquettes_Militaires.xlsx&quot;)]">
                     <ueab:ExcelApplicationCard.Body>
                       <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                         <ActivityAction.Argument>
@@ -180,7 +180,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <ueab:ReadRangeX DisplayName="Lire les données de la feuille produit" sap:VirtualizedContainerService.HintSize="474,203.33333333333334" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Produits&quot;)]" SaveTo="[ProductsDataTable]">
+                          <ueab:ReadRangeX DisplayName="Lire les données de la feuille produit" sap:VirtualizedContainerService.HintSize="481.3333333333333,203.33333333333334" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[Excel.Sheet(&quot;Produits&quot;)]" SaveTo="[ProductsDataTable]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
